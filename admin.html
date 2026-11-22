@@ -70,7 +70,7 @@ h2{font-size:clamp(28px,4vw,42px);letter-spacing:-.02em;margin-bottom:14px}h3{fo
 #ck.show{transform:none}#ck p{color:var(--mut);font-size:14px;margin-bottom:14px}#ck .row{gap:12px}
 /* blog */
 .post{cursor:pointer}.post time{color:var(--a1);font-size:13px;font-weight:600}.post h3{margin:6px 0}
-.art{max-width:740px}.art img{width:100%;border-radius:16px;margin:6px 0 24px}.art p{margin-bottom:18px;color:#d5dbea;font-size:18px}.back{margin-bottom:24px}
+.art{max-width:740px}.art img{width:100%;border-radius:16px;margin:6px 0 24px}.art h2{margin:34px 0 12px}.art blockquote{border-left:4px solid var(--a2);padding:4px 18px;margin:0 0 22px;color:var(--mut);font-size:20px}.art hr{border:0;height:1px;background:var(--line);margin:32px 0}.art a{text-decoration:underline}.art p{margin-bottom:18px;color:#d5dbea;font-size:18px}.back{margin-bottom:24px}
 .skel{height:170px;border-radius:var(--r);background:linear-gradient(90deg,var(--card),#1e2840,var(--card));background-size:200% 100%;animation:sk 1.3s infinite}@keyframes sk{to{background-position:-200% 0}}
 .legal h2{font-size:24px;margin:34px 0 10px}.legal p,.legal li{color:#c9d0e2;margin-bottom:10px}.legal ul{padding-left:22px}
 footer{border-top:1px solid var(--line);padding:30px 0;color:var(--mut);font-size:14px}footer .wrap{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}footer a{color:var(--mut)}footer a:hover{color:var(--a1)}
@@ -81,18 +81,51 @@ footer{border-top:1px solid var(--line);padding:30px 0;color:var(--mut);font-siz
 .shake{animation:sh 3s ease-in-out infinite}@keyframes sh{0%,90%,100%{transform:none}93%{transform:translateX(-8px) rotate(-1deg)}96%{transform:translateX(8px) rotate(1deg)}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
 </style></head><body><div class="bgfx"><svg viewBox="0 0 1400 700"><path class="route" d="M0 520 C220 520 260 200 520 200 S800 480 1020 400 1250 120 1400 140"/><path class="route" d="M0 640 C300 600 420 380 700 360 S1100 560 1400 420"/><circle class="bus" r="7" style="offset-path:path('M0 520 C220 520 260 200 520 200 S800 480 1020 400 1250 120 1400 140')"/><circle class="bus b2" r="6" style="offset-path:path('M0 640 C300 600 420 380 700 360 S1100 560 1400 420')"/></svg></div><nav><div class="wrap"><a href="/"><img src="https://o3k4rr.pages.dev/themes/o3k4rr-logo-full.svg" alt="O3K4RR"></a><div class="links"><a class="l" href="/">Start</a><a class="l" href="/blog">Blog</a><a class="l" href="/kontakt">Kontakt</a><a class="btn sm" href="/kontakt">Napisz do mnie</a></div><button class="burger" aria-label="Menu"><i></i><i></i><i></i></button></div></nav><main><style>
+#ck{display:none!important}.sp{flex:1}
 .tabs{display:flex;gap:8px;margin:20px 0}.tabs button{background:var(--card);border:1px solid var(--line);color:var(--mut);padding:10px 20px;border-radius:999px;cursor:pointer;font:600 15px inherit;font-family:inherit;transition:.25s}.tabs button.on{color:#2a1700;background:linear-gradient(180deg,var(--a1),var(--a2));border-color:transparent}
-.it{display:flex;justify-content:space-between;gap:14px;align-items:center;flex-wrap:wrap;margin-bottom:14px}.it small{color:var(--mut)}.pill{font-size:12px;padding:3px 10px;border-radius:99px;border:1px solid var(--line);color:var(--mut)}.pill.ok{color:#7dffb0;border-color:#2c6b48}
-.dz{border:2px dashed var(--line);border-radius:14px;padding:18px;text-align:center;color:var(--mut);cursor:pointer;transition:.25s}.dz:hover,.dz.hv{border-color:var(--a2);background:rgba(255,138,0,.08);color:var(--tx)}.dz.busy{opacity:.5;pointer-events:none}textarea.in.hv{border-color:var(--a2)}
+.bdg{display:inline-block;min-width:20px;padding:0 6px;margin-left:8px;border-radius:99px;background:#ff4d4d;color:#fff;font-size:12px;line-height:20px}.bdg[hidden]{display:none}
+.it{display:flex;justify-content:space-between;gap:14px;align-items:center;flex-wrap:wrap;margin-bottom:14px}.it small{color:var(--mut)}.pill{font-size:12px;padding:3px 10px;border-radius:99px;border:1px solid var(--line);color:var(--mut)}.pill.ok{color:#7dffb0;border-color:#2c6b48}.pill.nw{color:#ffd23f;border-color:#8a6a00}
 #md{position:fixed;inset:0;z-index:180;background:rgba(5,8,14,.7);backdrop-filter:blur(6px);display:flex;align-items:center;justify-content:center;padding:18px;opacity:0;pointer-events:none;transition:.25s}#md.on{opacity:1;pointer-events:auto}
-#md .box{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:26px;width:min(640px,100%);max-height:90vh;overflow:auto;transform:scale(.95);transition:.25s}#md.on .box{transform:none}
+#md .box{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:26px;width:min(560px,100%);max-height:90vh;overflow:auto;transform:scale(.95);transition:.25s}#md.on .box{transform:none}
 .sw{display:flex;align-items:center;gap:10px;cursor:pointer;user-select:none}.sw i{width:44px;height:26px;border-radius:99px;background:var(--line);position:relative;transition:.25s}.sw i:after{content:"";position:absolute;top:3px;left:3px;width:20px;height:20px;border-radius:50%;background:#fff;transition:.25s}.sw.on i{background:var(--a2)}.sw.on i:after{left:21px}
+.dz{border:2px dashed var(--line);border-radius:14px;padding:18px;text-align:center;color:var(--mut);cursor:pointer;transition:.25s}.dz:hover,.dz.hv{border-color:var(--a2);background:rgba(255,138,0,.08);color:var(--tx)}.dz.busy{opacity:.5;pointer-events:none}
+#ed[hidden]{display:none}#ed{position:fixed;inset:0;z-index:120;background:var(--bg);display:flex;flex-direction:column}
+.eh{display:flex;align-items:center;gap:14px;padding:12px 18px;border-bottom:1px solid var(--line);background:var(--bg2);flex-wrap:wrap}
+.mt{display:none;gap:8px;padding:8px 18px}.eg{flex:1;display:grid;grid-template-columns:1fr 1fr;min-height:0}.el,.er{overflow:auto;padding:22px}.er{background:#070a11;border-left:1px solid var(--line)}
+.ti{width:100%;background:none;border:0;outline:0;color:var(--tx);font:800 clamp(24px,3.2vw,36px)/1.15 inherit;font-family:inherit;margin-bottom:12px}
+.tb{position:sticky;top:-22px;z-index:5;display:flex;gap:6px;flex-wrap:wrap;align-items:center;padding:8px;margin:16px 0;background:var(--card);border:1px solid var(--line);border-radius:14px}
+.tb button,.ab button,.ic button{background:var(--bg2);border:1px solid var(--line);color:var(--tx);padding:7px 13px;border-radius:99px;cursor:pointer;font:600 13px inherit;font-family:inherit;transition:.2s}.tb button:hover,.ab button:hover,.ic button:hover{border-color:var(--a2);color:var(--a1)}
+#lkr{display:none;gap:6px;align-items:center}#lkr.on{display:inline-flex}
+#bl2{min-height:120px}.bk{border:1px solid var(--line);border-radius:16px;background:var(--bg2);margin-bottom:12px;position:relative;transition:opacity .2s}
+.bk.dg{opacity:.35}.bk.ovt:before,.bk.ovb:after{content:"";position:absolute;left:0;right:0;height:4px;border-radius:4px;background:var(--a2)}.bk.ovt:before{top:-8px}.bk.ovb:after{bottom:-8px}
+.bh{display:flex;align-items:center;gap:6px;padding:6px 10px;border-bottom:1px solid var(--line);color:var(--mut);font-size:12px}.gr{cursor:grab;font-size:18px;padding:0 6px;user-select:none}
+.bh button{background:none;border:0;color:var(--mut);cursor:pointer;padding:2px 8px;border-radius:8px}.bh button:hover{color:var(--a1);background:rgba(255,255,255,.06)}
+.bb{padding:12px 14px}.ce{outline:0;min-height:1.6em}.ce:empty:before{content:attr(data-ph);color:var(--mut);opacity:.6}.ce.h{font-size:24px;font-weight:800}.ce.q{border-left:4px solid var(--a2);padding-left:14px;color:var(--mut)}.ce a{color:var(--a1);text-decoration:underline}
+.ic{display:grid;gap:10px;margin-top:12px}.ic label{display:grid;grid-template-columns:120px 56px 1fr;align-items:center;gap:8px;font-size:13px;font-weight:500;margin:0}input[type=range]{accent-color:var(--a2)}.pi{display:block}
+.ab{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}
+.bw{border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--bg)}.bar{display:flex;align-items:center;gap:8px;padding:10px 12px;background:#1a2133}.bar i{width:11px;height:11px;border-radius:50%;background:#ff5f57}.bar i:nth-child(2){background:#febc2e}.bar i:nth-child(3){background:#28c840}
+.url{flex:1;margin-left:10px;background:#0d1320;border-radius:99px;padding:6px 14px;font-size:13px;color:var(--mut);overflow:hidden;white-space:nowrap;text-overflow:ellipsis}.url b{color:var(--a1)}.pg{padding:26px 22px}
+@media(max-width:900px){.mt{display:flex}.eg{grid-template-columns:1fr}#ed.v-p .el{display:none}#ed:not(.v-p) .er{display:none}.er{border-left:0}}
 </style>
 <section><div class="wrap"><div id="lg" style="max-width:420px"><h1>Admin</h1><p class="lead">Zaloguj się, aby zarządzać stroną.</p>
 <form id="lf" class="f" novalidate><div><label>E-mail</label><input class="in" name="e" type="text"></div><div><label>Hasło</label><input class="in" name="p" type="password"></div><div><button class="btn" type="submit">Zaloguj</button></div></form></div>
-<div id="pn" hidden><div class="it"><h1 style="margin:0">Panel</h1><button class="btn ghost sm" id="lo">Wyloguj</button></div>
-<div class="tabs"><button class="on" data-t="p">Wpisy</button><button data-t="l">Zgłoszenia</button></div><div id="ct"></div></div></div></section>
-<div id="md"><div class="box" id="mb"></div></div></main><footer><div class="wrap"><span>© 2026 O3K4RR · Wszelkie Prawa Zastrzeżone</span><span><a href="/regulamin">Regulamin</a> · <a href="/polityka-prywatnosci">Polityka prywatności</a></span></div></footer><div id="toasts"></div><div id="ck"><p>Używam tylko niezbędnych plików cookies oraz pamięci przeglądarki, aby strona działała poprawnie. Szczegóły w <a href="/polityka-prywatnosci">polityce prywatności</a>.</p><div class="row"><button class="btn sm" data-ck="all">Akceptuję</button><button class="btn sm ghost" data-ck="min">Tylko niezbędne</button></div></div>
+<div id="pn" hidden><div class="it"><div><h1 style="margin:0">Panel</h1><small>Zalogowano: <span id="who"></span> · odświeża się automatycznie</small></div><button class="btn ghost sm" id="lo">Wyloguj</button></div>
+<div class="tabs"><button class="on" data-t="p">Wpisy</button><button data-t="l">Zgłoszenia<span class="bdg" id="bg" hidden></span></button></div><div id="ct"></div></div></div></section>
+<div id="ed" hidden>
+<div class="eh"><button class="btn ghost sm" id="eb">← Wróć</button><span id="es" style="color:var(--mut);font-size:14px"></span><span class="sp"></span><div class="sw" id="ep"><i></i>Opublikowany</div><button class="btn sm" id="esv">Zapisz</button></div>
+<div class="mt"><button class="btn ghost sm" data-v="e">Edytor</button><button class="btn ghost sm" data-v="p">Podgląd</button></div>
+<div class="eg"><div class="el">
+<input class="ti" id="et" placeholder="Tytuł artykułu" maxlength="140" autocomplete="off">
+<input class="in" id="ex" placeholder="Krótka zajawka (widoczna na liście wpisów)" maxlength="240" autocomplete="off">
+<div style="margin-top:14px"><label>Okładka</label><div class="dz" id="dc"></div><input type="file" id="fc" accept="image/*" hidden></div>
+<div class="tb" id="tb"><button data-c="bold"><b>B</b></button><button data-c="italic"><i>I</i></button><button data-c="underline"><u>U</u></button><button data-c="strikeThrough"><s>S</s></button><button id="lk">🔗 Link</button><button data-c="removeFormat">Wyczyść</button><span id="lkr"><input class="in" id="lku" placeholder="https://…" style="padding:6px 12px;width:200px"><button id="lkb">OK</button></span></div>
+<div id="bl2"></div>
+<div class="ab" id="ab"><button data-add="p">+ Akapit</button><button data-add="h">+ Nagłówek</button><button data-add="img">+ Zdjęcie</button><button data-add="q">+ Cytat</button><button data-add="hr">+ Linia</button></div>
+</div>
+<div class="er"><div class="bw"><div class="bar"><i></i><i></i><i></i><div class="url" id="url"></div></div><div class="pg"><div class="art" id="pv"></div></div></div></div></div></div>
+<input type="file" id="fx" accept="image/*" multiple hidden>
+<div id="md"><div class="box" id="mb"></div></div>
+</main><footer><div class="wrap"><span>© 2026 O3K4RR · Wszelkie Prawa Zastrzeżone</span><span><a href="/regulamin">Regulamin</a> · <a href="/polityka-prywatnosci">Polityka prywatności</a></span></div></footer><div id="toasts"></div><div id="ck"><p>Używam tylko niezbędnych plików cookies oraz pamięci przeglądarki, aby strona działała poprawnie. Szczegóły w <a href="/polityka-prywatnosci">polityce prywatności</a>.</p><div class="row"><button class="btn sm" data-ck="all">Akceptuję</button><button class="btn sm ghost" data-ck="min">Tylko niezbędne</button></div></div>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
 <script>
 const SB_URL='https://uiuostyvlxwgzyyalwgb.supabase.co',SB_KEY='sb_publishable_6cF9ktyv9qN5z-9-EkmOrQ_jWyyIVUB';
@@ -106,67 +139,137 @@ const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.targ
 function reveal(){$$('.rv:not(.in)').forEach((el,i)=>{el.style.transitionDelay=(i%4)*80+'ms';io.observe(el)})}reveal();
 (function(){let c='';try{c=localStorage.getItem('o3k_ck')}catch(e){}if(c)return;const b=$('#ck');setTimeout(()=>b.classList.add('show'),900);
 $$('[data-ck]',b).forEach(x=>x.onclick=()=>{try{localStorage.setItem('o3k_ck',x.dataset.ck)}catch(e){}b.classList.remove('show')})})();
-
-const lg=$('#lg'),pn=$('#pn'),ct=$('#ct'),md=$('#md'),mb=$('#mb');let tab='p';
+const okimg=u=>typeof u==='string'&&u.startsWith(SB_URL+'/storage/');
+function san(h){const d=new DOMParser().parseFromString('<body>'+String(h||'')+'</body>','text/html');const ok={B:1,STRONG:1,I:1,EM:1,U:1,S:1,STRIKE:1,BR:1,A:1};
+ (function w(n){[...n.childNodes].forEach(c=>{if(c.nodeType===3)return;if(c.nodeType!==1){c.remove();return}w(c);
+  if(!ok[c.tagName]){c.replaceWith(...c.childNodes);return}
+  [...c.attributes].forEach(a=>{if(!(c.tagName==='A'&&a.name==='href'))c.removeAttribute(a.name)});
+  if(c.tagName==='A'){const h=c.getAttribute('href')||'';if(!/^(https?:|mailto:|\/)/i.test(h))c.removeAttribute('href');else{c.setAttribute('target','_blank');c.setAttribute('rel','noopener noreferrer')}}})})(d.body);
+ return d.body.innerHTML}
+function imgStyle(b){const c=+b.r===-1,m=b.a==='l'?'0 auto 0 0':b.a==='r'?'0 0 0 auto':'0 auto';return `width:${+b.w||100}%;margin:${m};border-radius:${c?'50%':(+b.r||0)+'px'};${c?'aspect-ratio:1;object-fit:cover;':''}`}
+function renderBlocks(bs){return (bs||[]).map(b=>{
+ if(b.t==='h')return `<h2>${esc(b.x)}</h2>`;
+ if(b.t==='p')return `<p>${san(b.x)}</p>`;
+ if(b.t==='q')return `<blockquote>${san(b.x)}</blockquote>`;
+ if(b.t==='hr')return '<hr>';
+ if(b.t==='img'&&okimg(b.u))return `<figure style="margin:0 0 24px"><img src="${esc(b.u)}" alt="${esc(b.alt||'')}" loading="lazy" style="${imgStyle(b)}"></figure>`;
+ return ''}).join('')}
+const lg=$('#lg'),pn=$('#pn'),ct=$('#ct'),md=$('#md'),mb=$('#mb'),ed=$('#ed'),bl=$('#bl2');
+let tab='p',LD=[],PD=[],known=null,pollT=null,chan=null,S=null,dirty=false,drag=null,pickT=-1,LSIG='',PSIG='',LMSG='',pvT=0,sv=null;
 const fd=d=>new Date(d).toLocaleString('pl-PL');
+const slugify=s=>String(s||'').toLowerCase().replace(/ł/g,'l').normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'').slice(0,80);
+const rnd=()=>Math.random().toString(36).slice(2,10);
+const em=e=>e&&e.message?e.message:'nieznany błąd';
 function modal(h){mb.innerHTML=h;md.classList.add('on')}function close(){md.classList.remove('on')}
 md.onclick=e=>{if(e.target===md)close()};
 function ask(t,y){return new Promise(r=>{modal(`<h3>${esc(t)}</h3><div class="row" style="margin-top:18px"><button class="btn sm" id="y">${y}</button><button class="btn sm ghost" id="n">Anuluj</button></div>`);$('#y').onclick=()=>{close();r(true)};$('#n').onclick=()=>{close();r(false)}})}
-async function gate(){const {data}=await sb.auth.getSession();const on=!!data.session;lg.hidden=on;pn.hidden=!on;if(on)load()}
+/* ---- sesja ---- */
+async function gate(){const {data}=await sb.auth.getSession();const s=data.session;lg.hidden=!!s;pn.hidden=!s;if(s){$('#who').textContent=s.user.email;start()}else stop()}
+function start(){if(pollT)return;load();pollL();pollT=setInterval(()=>{pollL();if(tab==='p'&&ed.hidden&&!md.classList.contains('on'))posts(true)},10000);
+ try{chan=sb.channel('leads-live').on('postgres_changes',{event:'*',schema:'public',table:'leads'},()=>pollL()).subscribe()}catch(e){}}
+function stop(){clearInterval(pollT);pollT=null;known=null;LSIG='';if(chan){try{sb.removeChannel(chan)}catch(e){}chan=null}}
 $('#lf').onsubmit=async e=>{e.preventDefault();const f=e.target;if(!f.e.value.trim()||!f.p.value)return toast('Podaj e-mail i hasło.',true);
- const {error}=await sb.auth.signInWithPassword({email:f.e.value.trim(),password:f.p.value});if(error)return toast('Błędne dane logowania.',true);f.p.value='';gate()};
-$('#lo').onclick=async()=>{await sb.auth.signOut();gate()};
+ const {error}=await sb.auth.signInWithPassword({email:f.e.value.trim(),password:f.p.value});if(error)return toast('Logowanie nie powiodło się: '+em(error),true);f.p.value='';gate()};
+$('#lo').onclick=async()=>{await sb.auth.signOut();stop();gate()};
 $$('.tabs button').forEach(b=>b.onclick=()=>{$$('.tabs button').forEach(x=>x.classList.remove('on'));b.classList.add('on');tab=b.dataset.t;load()});
-function load(){tab==='p'?posts():leads()}
-async function posts(){ct.innerHTML='<div class="skel"></div>';const {data,error}=await sb.from('posts').select('*').order('published_at',{ascending:false});
- if(error)return toast('Błąd odczytu wpisów.',true);
- ct.innerHTML='<button class="btn sm" id="np" style="margin-bottom:20px">+ Nowy wpis</button>'+data.map(p=>`<div class="card it"><div><h3 style="margin:0">${esc(p.title)}</h3><small>/${esc(p.rid||'—')}/${esc(p.slug)} · ${fd(p.published_at)}</small> <span class="pill ${p.published?'ok':''}">${p.published?'opublikowany':'szkic'}</span></div><div class="row" style="gap:10px"><button class="btn sm ghost" data-e="${p.id}">Edytuj</button><button class="btn sm ghost" data-d="${p.id}">Usuń</button></div></div>`).join('');
- $('#np').onclick=()=>edit({});
- $$('[data-e]').forEach(b=>b.onclick=()=>edit(data.find(p=>p.id===b.dataset.e)));
- $$('[data-d]').forEach(b=>b.onclick=async()=>{if(!await ask('Usunąć ten wpis?','Usuń'))return;const {error}=await sb.from('posts').delete().eq('id',b.dataset.d);error?toast('Nie udało się usunąć.',true):(toast('Wpis usunięty.'),posts())})}
-const slugify=s=>s.toLowerCase().replace(/ł/g,'l').normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
-function edit(p){let pub=!!p.published,rid=p.rid||Math.random().toString(36).slice(2,10),cover=p.cover||'',manual=!!p.id;
- modal(`<h3>${p.id?'Edytuj wpis':'Nowy wpis'}</h3><div class="f" style="margin-top:14px;max-width:none">
-<div><label>Tytuł</label><input class="in" id="t" value="${esc(p.title)}"></div>
-<div><label>Adres wpisu</label><div class="in" style="display:flex;align-items:center;gap:2px;flex-wrap:wrap"><span style="color:var(--mut)">/${rid}/</span><input id="s" value="${esc(p.slug)}" style="flex:1;min-width:140px;background:none;border:0;outline:0;color:inherit;font:inherit"></div></div>
-<div><label>Zajawka</label><input class="in" id="x" value="${esc(p.excerpt)}"></div>
-<div><label>Okładka</label><div class="dz" id="dc"></div><input type="file" id="fc" accept="image/*" hidden></div>
-<div><label>Treść (akapity oddziel pustą linią)</label><textarea class="in" id="c" style="min-height:200px">${esc(p.content)}</textarea>
-<div class="dz" id="di" style="margin-top:10px">🖼️ Przeciągnij zdjęcia tutaj (lub na pole tekstowe) albo kliknij – zostaną wstawione w treść</div><input type="file" id="fi" accept="image/*" multiple hidden></div>
-<div class="sw ${pub?'on':''}" id="sw"><i></i>Opublikowany</div>
-<div class="row"><button class="btn sm" id="sv">Zapisz</button><button class="btn sm ghost" id="cx">Anuluj</button></div></div>`);
- async function up(f){if(f.size>5*1048576){toast('Plik większy niż 5 MB: '+f.name,true);return}
-  const ext=((f.name.split('.').pop()||'jpg').toLowerCase().replace(/[^a-z0-9]/g,''))||'jpg';
-  const path=`${rid}/${Date.now()}-${Math.random().toString(36).slice(2,6)}.${ext}`;
-  const {error}=await sb.storage.from('images').upload(path,f,{contentType:f.type});
-  if(error){toast('Nie udało się wgrać zdjęcia.',true);return}
-  return sb.storage.from('images').getPublicUrl(path).data.publicUrl}
- function dz(el,inp,multi,cb){const run=async fs=>{fs=fs.filter(f=>/^image\//.test(f.type));if(!fs.length)return toast('Wybierz plik graficzny.',true);
-   el.classList.add('busy');for(const f of(multi?fs:fs.slice(0,1))){const u=await up(f);if(u)cb(u)}el.classList.remove('busy')};
-  ['dragenter','dragover'].forEach(n=>el.addEventListener(n,e=>{e.preventDefault();el.classList.add('hv')}));
-  ['dragleave','drop'].forEach(n=>el.addEventListener(n,e=>{e.preventDefault();el.classList.remove('hv')}));
-  el.addEventListener('drop',e=>run([...e.dataTransfer.files]));
-  if(inp){el.onclick=()=>inp.click();inp.onchange=()=>{run([...inp.files]);inp.value=''}}}
- const showCover=()=>{$('#dc').innerHTML=cover?`<img src="${esc(cover)}" alt="" style="max-height:140px;border-radius:12px;margin:auto"><small style="display:block;margin-top:8px">Kliknij lub upuść, aby zmienić · <a href="#" id="rc">usuń</a></small>`:'🖼️ Przeciągnij okładkę tutaj albo kliknij';
-  const r=$('#rc');if(r)r.onclick=e=>{e.preventDefault();e.stopPropagation();cover='';showCover()}};showCover();
- dz($('#dc'),$('#fc'),false,u=>{cover=u;showCover()});
- const ins=u=>{const c=$('#c'),pos=c.selectionStart??c.value.length,tx=`\n\n![](${u})\n\n`;c.value=c.value.slice(0,pos)+tx+c.value.slice(pos);c.selectionStart=c.selectionEnd=pos+tx.length;toast('Zdjęcie wstawione.')};
- dz($('#di'),$('#fi'),true,ins);dz($('#c'),null,true,ins);
- $('#t').oninput=()=>{if(!manual)$('#s').value=slugify($('#t').value)};$('#s').oninput=()=>{manual=true};
- $('#sw').onclick=e=>{pub=!pub;e.currentTarget.classList.toggle('on',pub)};$('#cx').onclick=close;
- $('#sv').onclick=async()=>{const t=$('#t').value.trim(),s=slugify($('#s').value||t);if(!t||!s||!$('#c').value.trim())return toast('Uzupełnij tytuł i treść.',true);
-  const row={title:t,slug:s,rid,excerpt:$('#x').value.trim(),cover:cover||null,content:$('#c').value,published:pub};
-  if(pub&&!p.published)row.published_at=new Date().toISOString();
-  const q=p.id?sb.from('posts').update(row).eq('id',p.id):sb.from('posts').insert(row);const {error}=await q;
-  if(error)return toast('Błąd zapisu (czy wykonano SQL z kolumnami rid i cover?).',true);close();toast('Zapisano.');posts()}}
-
+function load(){tab==='p'?posts():drawL()}
+/* ---- wpisy ---- */
+async function posts(silent){if(!silent)ct.innerHTML='<div class="skel"></div>';
+ const {data,error}=await sb.from('posts').select('id,title,slug,rid,published,published_at').order('published_at',{ascending:false});
+ if(error){if(!silent&&tab==='p')ct.innerHTML=`<p class="lead">Nie można odczytać wpisów: ${esc(em(error))}<br>Uruchom skrypt SQL (uprawnienia i polityki RLS).</p>`;return}
+ const sig=JSON.stringify(data);if(silent&&sig===PSIG)return;PSIG=sig;PD=data;if(tab==='p')drawP()}
+function drawP(){ct.innerHTML='<button class="btn sm" id="np" style="margin-bottom:20px">+ Nowy wpis</button>'+(PD.length?'':'<p class="lead">Brak wpisów.</p>')+PD.map(p=>`<div class="card it"><div><h3 style="margin:0">${esc(p.title)}</h3><small>/${esc(p.rid||'—')}/${esc(p.slug)} · ${fd(p.published_at)}</small> <span class="pill ${p.published?'ok':''}">${p.published?'opublikowany':'szkic'}</span></div><div class="row" style="gap:10px">${p.rid&&p.published?`<a class="btn sm ghost" href="/${esc(p.rid)}/${esc(p.slug)}" target="_blank" rel="noopener">Otwórz</a>`:''}<button class="btn sm ghost" data-e="${p.id}">Edytuj</button><button class="btn sm ghost" data-d="${p.id}">Usuń</button></div></div>`).join('');
+ $('#np').onclick=()=>openEd(null);$$('[data-e]').forEach(b=>b.onclick=()=>openEd(b.dataset.e));
+ $$('[data-d]').forEach(b=>b.onclick=async()=>{if(!await ask('Usunąć ten wpis?','Usuń'))return;const {error}=await sb.from('posts').delete().eq('id',b.dataset.d);error?toast('Nie udało się usunąć: '+em(error),true):(toast('Wpis usunięty.'),PSIG='',posts())})}
+/* ---- zgłoszenia + powiadomienia ---- */
 const ST=['new','in_progress','done','spam'],SL={new:'Nowe',in_progress:'W toku',done:'Zakończone',spam:'Spam'};
-async function leads(){ct.innerHTML='<div class="skel"></div>';const {data,error}=await sb.from('leads').select('*').order('created_at',{ascending:false});
- if(error)return toast('Błąd odczytu zgłoszeń.',true);if(!data.length){ct.innerHTML='<p class="lead">Brak zgłoszeń.</p>';return}
- ct.innerHTML=data.map(l=>`<div class="card"><div class="it"><div><h3 style="margin:0">${esc(l.name)} · <a href="mailto:${esc(l.email)}">${esc(l.email)}</a></h3><small>${esc(l.topic)} · ${fd(l.created_at)}</small></div><span class="pill ${l.status==='done'?'ok':''}">${SL[l.status]||esc(l.status)}</span></div><p style="white-space:pre-wrap;margin-bottom:14px">${esc(l.message)}</p><div class="row" style="gap:10px"><button class="btn sm ghost" data-o="${l.id}">Zmień status / notatka</button><button class="btn sm ghost" data-x="${l.id}">Usuń</button></div></div>`).join('');
- $$('[data-x]').forEach(b=>b.onclick=async()=>{if(!await ask('Usunąć to zgłoszenie?','Usuń'))return;const {error}=await sb.from('leads').delete().eq('id',b.dataset.x);error?toast('Nie udało się usunąć.',true):(toast('Usunięto.'),leads())});
- $$('[data-o]').forEach(b=>b.onclick=()=>{const l=data.find(x=>x.id===b.dataset.o);let st=l.status||'new';
-  modal(`<h3>Zgłoszenie: ${esc(l.name)}</h3><div class="f" style="margin-top:14px;max-width:none"><div><label>Status</label><div class="row" id="stt" style="gap:8px">${ST.map(s=>`<button class="btn sm ${s===st?'':'ghost'}" data-s="${s}">${SL[s]}</button>`).join('')}</div></div><div><label>Notatki</label><textarea class="in" id="nt">${esc(l.notes)}</textarea></div><div class="row"><button class="btn sm" id="sv">Zapisz</button><button class="btn sm ghost" id="cx">Anuluj</button></div></div>`);
+function badge(){const n=LD.filter(l=>!l.status||l.status==='new').length;const b=$('#bg');b.textContent=n;b.hidden=!n;if(ed.hidden)document.title=(n?`(${n}) `:'')+'Admin – O3K4RR'}
+async function pollL(){const {data,error}=await sb.from('leads').select('*').order('created_at',{ascending:false});
+ if(error){if(LMSG!==error.message){LMSG=error.message;toast('Zgłoszenia: '+em(error),true);if(tab==='l')drawL()}return}LMSG='';
+ if(known){data.filter(l=>!known.has(l.id)).slice(0,3).forEach(l=>toast(`🔔 Nowe zgłoszenie od ${l.name} (${l.topic})`))}
+ known=new Set(data.map(l=>l.id));const sig=JSON.stringify(data);const ch=sig!==LSIG;LD=data;LSIG=sig;badge();if(ch&&tab==='l'&&!md.classList.contains('on'))drawL()}
+function drawL(){if(LMSG){ct.innerHTML=`<p class="lead">Nie można odczytać zgłoszeń: ${esc(LMSG)}<br>Sprawdź, czy e-mail w polityce RLS jest identyczny z kontem, na które się logujesz (widać go u góry).</p>`;return}
+ if(!LD.length){ct.innerHTML='<p class="lead">Brak zgłoszeń. Nowe pojawią się tu same.</p>';return}
+ ct.innerHTML=LD.map(l=>`<div class="card"><div class="it"><div><h3 style="margin:0">${esc(l.name)} · <a href="mailto:${esc(l.email)}">${esc(l.email)}</a></h3><small>${esc(l.topic)} · ${fd(l.created_at)}</small></div><span class="pill ${l.status==='done'?'ok':(!l.status||l.status==='new')?'nw':''}">${SL[l.status||'new']||esc(l.status)}</span></div><p style="white-space:pre-wrap;margin-bottom:14px">${esc(l.message)}</p>${l.notes?`<p><small>📝 ${esc(l.notes)}</small></p>`:''}<div class="row" style="gap:10px"><button class="btn sm ghost" data-o="${l.id}">Status / notatka</button><button class="btn sm ghost" data-x="${l.id}">Usuń</button></div></div>`).join('');
+ $$('[data-x]').forEach(b=>b.onclick=async()=>{if(!await ask('Usunąć to zgłoszenie?','Usuń'))return;const {error}=await sb.from('leads').delete().eq('id',b.dataset.x);error?toast('Nie udało się usunąć: '+em(error),true):(toast('Usunięto.'),pollL())});
+ $$('[data-o]').forEach(b=>b.onclick=()=>{const l=LD.find(x=>x.id===b.dataset.o);let st=l.status||'new';
+  modal(`<h3>Zgłoszenie: ${esc(l.name)}</h3><div class="f" style="margin-top:14px;max-width:none"><div><label>Status</label><div class="row" id="stt" style="gap:8px">${ST.map(s=>`<button class="btn sm ${s===st?'':'ghost'}" data-s="${s}">${SL[s]}</button>`).join('')}</div></div><div><label>Notatki</label><textarea class="in" id="nt">${esc(l.notes)}</textarea></div><div class="row"><button class="btn sm" id="sv2">Zapisz</button><button class="btn sm ghost" id="cx">Anuluj</button></div></div>`);
   $$('#stt button').forEach(x=>x.onclick=()=>{st=x.dataset.s;$$('#stt button').forEach(y=>y.classList.toggle('ghost',y!==x))});$('#cx').onclick=close;
-  $('#sv').onclick=async()=>{const {error}=await sb.from('leads').update({status:st,notes:$('#nt').value}).eq('id',l.id);error?toast('Błąd zapisu.',true):(close(),toast('Zapisano.'),leads())}})}
-gate();</script></body></html>
+  $('#sv2').onclick=async()=>{const {error}=await sb.from('leads').update({status:st,notes:$('#nt').value}).eq('id',l.id);error?toast('Błąd zapisu: '+em(error),true):(close(),toast('Zapisano.'),pollL())}})}
+/* ---- edytor wpisu ---- */
+const NAMES={p:'Akapit',h:'Nagłówek',q:'Cytat',img:'Zdjęcie',hr:'Linia'};
+function fromText(t){return String(t||'').split(/\n\s*\n/).map(b=>b.trim()).filter(Boolean).map(b=>{const m=b.match(/^!\[([^\]]*)\]\((https:\/\/[^\s)]+)\)$/);return m?{t:'img',u:m[2],alt:m[1],w:100,r:16,a:'c'}:{t:'p',x:esc(b).replace(/\n/g,'<br>')}})}
+function stat(t){$('#es').textContent=t}
+async function openEd(id){let p={};if(id){const {data,error}=await sb.from('posts').select('*').eq('id',id).single();if(error)return toast('Nie można otworzyć wpisu: '+em(error),true);p=data}
+ S={id:p.id||null,rid:p.rid||rnd(),title:p.title||'',excerpt:p.excerpt||'',cover:p.cover||'',pub:!!p.published,pubAt:p.published_at||null,blocks:Array.isArray(p.blocks)&&p.blocks.length?p.blocks:fromText(p.content)};
+ if(!S.blocks.length)S.blocks=[{t:'p',x:''}];dirty=false;$('#et').value=S.title;$('#ex').value=S.excerpt;$('#ep').classList.toggle('on',S.pub);
+ ed.hidden=false;ed.className='';document.body.style.overflow='hidden';drawCover();drawB();pv();stat('');document.title='Edytor – O3K4RR'}
+async function leave(){if(dirty&&!await ask('Masz niezapisane zmiany. Wyjść bez zapisywania?','Wyjdź'))return;ed.hidden=true;document.body.style.overflow='';S=null;dirty=false;badge();PSIG='';posts()}
+$('#eb').onclick=leave;$('#esv').onclick=()=>save();
+addEventListener('keydown',e=>{if(!ed.hidden&&(e.ctrlKey||e.metaKey)&&e.key==='s'){e.preventDefault();save()}});
+addEventListener('dragover',e=>{if(!ed.hidden)e.preventDefault()});addEventListener('drop',e=>{if(!ed.hidden)e.preventDefault()});
+$$('.mt button').forEach(b=>b.onclick=()=>{ed.className='v-'+b.dataset.v});
+$('#et').oninput=e=>{S.title=e.target.value;dirty=true;pv()};$('#ex').oninput=e=>{S.excerpt=e.target.value;dirty=true};
+$('#ep').onclick=e=>{S.pub=!S.pub;e.currentTarget.classList.toggle('on',S.pub);dirty=true};
+function bodyB(b){if(b.t==='hr')return '<hr>';
+ if(b.t==='img')return b.u?`<img class="pi" src="${esc(b.u)}" alt="" style="${imgStyle(b)}"><div class="ic"><label>Rozmiar <span>${+b.w||100}%</span><input type="range" min="20" max="100" value="${+b.w||100}" data-k="w"></label><label>Zaokrąglenie <span>${+b.r===-1?'koło':(+b.r||0)+'px'}</span><input type="range" min="0" max="60" value="${+b.r>=0?+b.r:0}" data-k="r"></label><div class="row" style="gap:8px"><button data-al="l">◧ Lewo</button><button data-al="c">▣ Środek</button><button data-al="r">◨ Prawo</button><button data-k2="circle">${+b.r===-1?'Koło ✓':'Koło'}</button><button data-k2="repl">Zmień zdjęcie</button></div></div>`:'<div class="dz" data-up>🖼️ Przeciągnij zdjęcie tutaj lub kliknij, aby wybrać</div>';
+ return `<div class="ce ${b.t}" contenteditable="true" data-ph="${b.t==='h'?'Nagłówek sekcji':b.t==='q'?'Cytat…':'Pisz tutaj…'}">${b.t==='h'?esc(b.x):san(b.x)}</div>`}
+function caretEnd(el){const r=document.createRange();r.selectNodeContents(el);r.collapse(false);const s=getSelection();s.removeAllRanges();s.addRange(r)}
+function drawB(focus){bl.innerHTML=S.blocks.map((b,i)=>`<div class="bk" data-i="${i}"><div class="bh"><span class="gr" draggable="true">⠿</span><span>${NAMES[b.t]}</span><span class="sp"></span><button data-a="up">▲</button><button data-a="dn">▼</button><button data-a="del">✕</button></div><div class="bb">${bodyB(b)}</div></div>`).join('');
+ if(focus!=null){const el=$(`.bk[data-i="${focus}"] .ce`);if(el){el.focus();caretEnd(el)}}}
+function pv(){cancelAnimationFrame(pvT);pvT=requestAnimationFrame(()=>{if(!S)return;const sl=slugify(S.title)||'tytul-artykulu';$('#url').innerHTML=`o3k4rr.pages.dev/<b>${esc(S.rid)}</b>/${esc(sl)}`;
+ const d=S.pubAt||new Date().toISOString();$('#pv').innerHTML=`<time class="tag">${new Date(d).toLocaleDateString('pl-PL',{day:'numeric',month:'long',year:'numeric'})}</time><h1 style="font-size:clamp(26px,4vw,42px)">${S.title?esc(S.title):'<span style="opacity:.35">Tytuł artykułu</span>'}</h1>${okimg(S.cover)?`<img src="${esc(S.cover)}" alt="">`:''}${renderBlocks(S.blocks)}`})}
+bl.addEventListener('input',e=>{const bk=e.target.closest('.bk');if(!bk)return;const b=S.blocks[+bk.dataset.i];
+ if(e.target.classList.contains('ce'))b.x=b.t==='h'?e.target.textContent:e.target.innerHTML;
+ else if(e.target.dataset.k){const k=e.target.dataset.k;b[k]=+e.target.value;e.target.previousElementSibling.textContent=k==='w'?b.w+'%':b.r+'px';bk.querySelector('.pi').style.cssText=imgStyle(b)}
+ dirty=true;pv()});
+bl.addEventListener('click',e=>{const t=e.target.closest('button,.dz');if(!t)return;const bk=t.closest('.bk'),i=bk?+bk.dataset.i:-1;
+ if(t.dataset.a){if(t.dataset.a==='del'){S.blocks.splice(i,1);if(!S.blocks.length)S.blocks.push({t:'p',x:''})}else{const j=t.dataset.a==='up'?i-1:i+1;if(j<0||j>=S.blocks.length)return;[S.blocks[i],S.blocks[j]]=[S.blocks[j],S.blocks[i]]}dirty=true;drawB();pv()}
+ else if(t.dataset.al){S.blocks[i].a=t.dataset.al;dirty=true;drawB();pv()}
+ else if(t.dataset.k2==='circle'){const b=S.blocks[i];b.r=+b.r===-1?16:-1;dirty=true;drawB();pv()}
+ else if(t.dataset.k2==='repl'||t.hasAttribute('data-up')){pickT=i;$('#fx').click()}});
+bl.addEventListener('keydown',e=>{const el=e.target;if(!el.classList.contains('ce'))return;const i=+el.closest('.bk').dataset.i,b=S.blocks[i];
+ if(e.key==='Enter'){e.preventDefault();if(e.shiftKey&&b.t!=='h')document.execCommand('insertLineBreak');else{S.blocks.splice(i+1,0,{t:'p',x:''});dirty=true;drawB(i+1);pv()}}
+ else if(e.key==='Backspace'&&!el.textContent&&S.blocks.length>1){e.preventDefault();S.blocks.splice(i,1);dirty=true;drawB(Math.max(0,i-1));pv()}});
+bl.addEventListener('paste',e=>{if(!e.target.classList.contains('ce'))return;e.preventDefault();document.execCommand('insertText',false,(e.clipboardData||window.clipboardData).getData('text/plain'))});
+const clrov=()=>$$('.bk.ovt,.bk.ovb').forEach(x=>x.classList.remove('ovt','ovb'));
+bl.addEventListener('dragstart',e=>{const g=e.target.closest&&e.target.closest('.gr');if(!g)return;const bk=g.closest('.bk');drag=+bk.dataset.i;e.dataTransfer.effectAllowed='move';e.dataTransfer.setData('text/plain','blk');try{e.dataTransfer.setDragImage(bk,20,20)}catch(x){}bk.classList.add('dg')});
+bl.addEventListener('dragend',()=>{drag=null;clrov();$$('.bk.dg').forEach(x=>x.classList.remove('dg'))});
+bl.addEventListener('dragover',e=>{const files=[...e.dataTransfer.types].includes('Files');if(drag===null&&!files)return;e.preventDefault();clrov();const bk=e.target.closest('.bk');if(bk){const r=bk.getBoundingClientRect();bk.classList.add(e.clientY<r.top+r.height/2?'ovt':'ovb')}});
+bl.addEventListener('dragleave',e=>{if(!bl.contains(e.relatedTarget))clrov()});
+bl.addEventListener('drop',e=>{e.preventDefault();const bk=e.target.closest('.bk');let at=S.blocks.length;if(bk){const r=bk.getBoundingClientRect();at=+bk.dataset.i+(e.clientY<r.top+r.height/2?0:1)}clrov();
+ if(drag!==null){const [b]=S.blocks.splice(drag,1);if(at>drag)at--;S.blocks.splice(at,0,b);drag=null;dirty=true;drawB();pv()}
+ else if(e.dataTransfer.files.length){const fs=[...e.dataTransfer.files],i=bk?+bk.dataset.i:-1;i>=0&&S.blocks[i].t==='img'&&!S.blocks[i].u?fillImg(i,fs):addImgs(fs,at)}});
+$$('#ab [data-add]').forEach(b=>b.onclick=()=>{const t=b.dataset.add;S.blocks.push(t==='img'?{t:'img',u:'',w:100,r:16,a:'c'}:t==='hr'?{t:'hr'}:{t,x:''});dirty=true;const i=S.blocks.length-1;drawB(t==='img'||t==='hr'?null:i);pv();if(t==='img'){pickT=i;$('#fx').click()}});
+/* pasek formatowania */
+$$('#tb [data-c]').forEach(b=>{b.onmousedown=e=>e.preventDefault();b.onclick=()=>{const a=document.activeElement;if(!a||!a.classList.contains('ce')||a.classList.contains('h'))return toast('Zaznacz tekst w akapicie lub cytacie.',true);document.execCommand(b.dataset.c)}});
+const lkr=$('#lkr'),lku=$('#lku');$('#lk').onmousedown=e=>e.preventDefault();
+$('#lk').onclick=()=>{const a=document.activeElement,s=getSelection();if(!a||!a.classList.contains('ce')||a.classList.contains('h')||!s.rangeCount||s.isCollapsed)return toast('Zaznacz fragment tekstu, który ma być linkiem.',true);sv={r:s.getRangeAt(0).cloneRange(),el:a};lkr.classList.add('on');lku.value='';lku.focus()};
+function applyLk(){if(!sv)return;let u=lku.value.trim();sv.el.focus();const s=getSelection();s.removeAllRanges();s.addRange(sv.r);if(u&&!/^(https?:|mailto:|\/)/i.test(u))u='https://'+u;u?document.execCommand('createLink',false,u):document.execCommand('unlink');lkr.classList.remove('on');sv=null}
+lku.onkeydown=e=>{if(e.key==='Enter'){e.preventDefault();applyLk()}if(e.key==='Escape'){lkr.classList.remove('on');sv=null}};$('#lkb').onclick=applyLk;
+/* zdjęcia */
+async function up(f){if(!/^image\//.test(f.type)){toast('To nie jest obraz: '+f.name,true);return}if(f.size>5*1048576){toast('Plik większy niż 5 MB: '+f.name,true);return}
+ const ext=((f.name.split('.').pop()||'jpg').toLowerCase().replace(/[^a-z0-9]/g,''))||'jpg',path=`${S.rid}/${Date.now()}-${rnd().slice(0,4)}.${ext}`;
+ const {error}=await sb.storage.from('images').upload(path,f,{contentType:f.type});
+ if(error){toast('Wgrywanie nie powiodło się: '+em(error),true);return}
+ return sb.storage.from('images').getPublicUrl(path).data.publicUrl}
+async function addImgs(fs,at){stat('Wgrywanie…');let n=0;for(const f of fs){const u=await up(f);if(u){S.blocks.splice(at+n,0,{t:'img',u,w:100,r:16,a:'c'});n++}}stat('');if(n){dirty=true;drawB();pv();toast(n>1?'Wgrano zdjęcia: '+n:'Zdjęcie wgrane.')}}
+async function fillImg(i,fs){stat('Wgrywanie…');const u=await up(fs[0]);stat('');if(u){S.blocks[i].u=u;dirty=true;drawB();pv();toast('Zdjęcie wgrane.')}if(fs.length>1)addImgs(fs.slice(1),i+1)}
+$('#fx').onchange=e=>{const fs=[...e.target.files];e.target.value='';if(!fs.length)return;pickT>=0?fillImg(pickT,fs):addImgs(fs,S.blocks.length);pickT=-1};
+const dc=$('#dc'),fc=$('#fc');
+function drawCover(){dc.innerHTML=S.cover?`<img src="${esc(S.cover)}" alt="" style="max-height:150px;border-radius:12px;margin:0 auto 8px"><small>Kliknij lub upuść, aby zmienić · <a href="#" id="rc">usuń okładkę</a></small>`:'🖼️ Przeciągnij okładkę tutaj lub kliknij';const r=$('#rc');if(r)r.onclick=e=>{e.preventDefault();e.stopPropagation();S.cover='';dirty=true;drawCover();pv()}}
+['dragenter','dragover'].forEach(n=>dc.addEventListener(n,e=>{e.preventDefault();dc.classList.add('hv')}));['dragleave','drop'].forEach(n=>dc.addEventListener(n,e=>{e.preventDefault();dc.classList.remove('hv')}));
+async function setCover(f){if(!f)return;dc.classList.add('busy');const u=await up(f);dc.classList.remove('busy');if(u){S.cover=u;dirty=true;drawCover();pv()}}
+dc.addEventListener('drop',e=>setCover(e.dataTransfer.files[0]));dc.onclick=()=>fc.click();fc.onchange=()=>{setCover(fc.files[0]);fc.value=''};
+/* zapis */
+function plain(bs){return bs.map(b=>b.t==='img'||b.t==='hr'?'':b.t==='h'?b.x:new DOMParser().parseFromString('<body>'+b.x+'</body>','text/html').body.textContent).filter(Boolean).join('\n\n')}
+async function save(){const t=S.title.trim();if(!t)return toast('Wpisz tytuł artykułu.',true);
+ const bs=S.blocks.filter(b=>b.t==='hr'||(b.t==='img'?b.u:String(b.x||'').replace(/<[^>]*>/g,'').trim())).map(b=>b.t==='img'||b.t==='hr'?b:{t:b.t,x:b.t==='h'?String(b.x).trim():san(b.x)});
+ if(!bs.length)return toast('Dodaj jakąś treść.',true);
+ const row={title:t,slug:slugify(t)||'wpis',rid:S.rid,excerpt:S.excerpt.trim(),cover:S.cover||null,blocks:bs,content:plain(bs),published:S.pub};
+ if(S.pub&&!S.pubAt){S.pubAt=new Date().toISOString();row.published_at=S.pubAt}
+ stat('Zapisywanie…');const r=S.id?await sb.from('posts').update(row).eq('id',S.id).select('id').single():await sb.from('posts').insert(row).select('id').single();
+ if(r.error){stat('');return toast('Błąd zapisu: '+em(r.error),true)}
+ S.id=r.data.id;dirty=false;stat('Zapisano '+new Date().toLocaleTimeString('pl-PL',{hour:'2-digit',minute:'2-digit'}));toast('Zapisano.')}
+gate();
+</script></body></html>
