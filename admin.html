@@ -70,7 +70,7 @@ h2{font-size:clamp(28px,4vw,42px);letter-spacing:-.02em;margin-bottom:14px}h3{fo
 #ck.show{transform:none}#ck p{color:var(--mut);font-size:14px;margin-bottom:14px}#ck .row{gap:12px}
 /* blog */
 .post{cursor:pointer}.post time{color:var(--a1);font-size:13px;font-weight:600}.post h3{margin:6px 0}
-.art{max-width:740px}.art p{margin-bottom:18px;color:#d5dbea;font-size:18px}.back{margin-bottom:24px}
+.art{max-width:740px}.art img{width:100%;border-radius:16px;margin:6px 0 24px}.art p{margin-bottom:18px;color:#d5dbea;font-size:18px}.back{margin-bottom:24px}
 .skel{height:170px;border-radius:var(--r);background:linear-gradient(90deg,var(--card),#1e2840,var(--card));background-size:200% 100%;animation:sk 1.3s infinite}@keyframes sk{to{background-position:-200% 0}}
 .legal h2{font-size:24px;margin:34px 0 10px}.legal p,.legal li{color:#c9d0e2;margin-bottom:10px}.legal ul{padding-left:22px}
 footer{border-top:1px solid var(--line);padding:30px 0;color:var(--mut);font-size:14px}footer .wrap{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}footer a{color:var(--mut)}footer a:hover{color:var(--a1)}
@@ -83,6 +83,7 @@ footer{border-top:1px solid var(--line);padding:30px 0;color:var(--mut);font-siz
 </style></head><body><div class="bgfx"><svg viewBox="0 0 1400 700"><path class="route" d="M0 520 C220 520 260 200 520 200 S800 480 1020 400 1250 120 1400 140"/><path class="route" d="M0 640 C300 600 420 380 700 360 S1100 560 1400 420"/><circle class="bus" r="7" style="offset-path:path('M0 520 C220 520 260 200 520 200 S800 480 1020 400 1250 120 1400 140')"/><circle class="bus b2" r="6" style="offset-path:path('M0 640 C300 600 420 380 700 360 S1100 560 1400 420')"/></svg></div><nav><div class="wrap"><a href="/"><img src="https://o3k4rr.pages.dev/themes/o3k4rr-logo-full.svg" alt="O3K4RR"></a><div class="links"><a class="l" href="/">Start</a><a class="l" href="/blog">Blog</a><a class="l" href="/kontakt">Kontakt</a><a class="btn sm" href="/kontakt">Napisz do mnie</a></div><button class="burger" aria-label="Menu"><i></i><i></i><i></i></button></div></nav><main><style>
 .tabs{display:flex;gap:8px;margin:20px 0}.tabs button{background:var(--card);border:1px solid var(--line);color:var(--mut);padding:10px 20px;border-radius:999px;cursor:pointer;font:600 15px inherit;font-family:inherit;transition:.25s}.tabs button.on{color:#2a1700;background:linear-gradient(180deg,var(--a1),var(--a2));border-color:transparent}
 .it{display:flex;justify-content:space-between;gap:14px;align-items:center;flex-wrap:wrap;margin-bottom:14px}.it small{color:var(--mut)}.pill{font-size:12px;padding:3px 10px;border-radius:99px;border:1px solid var(--line);color:var(--mut)}.pill.ok{color:#7dffb0;border-color:#2c6b48}
+.dz{border:2px dashed var(--line);border-radius:14px;padding:18px;text-align:center;color:var(--mut);cursor:pointer;transition:.25s}.dz:hover,.dz.hv{border-color:var(--a2);background:rgba(255,138,0,.08);color:var(--tx)}.dz.busy{opacity:.5;pointer-events:none}textarea.in.hv{border-color:var(--a2)}
 #md{position:fixed;inset:0;z-index:180;background:rgba(5,8,14,.7);backdrop-filter:blur(6px);display:flex;align-items:center;justify-content:center;padding:18px;opacity:0;pointer-events:none;transition:.25s}#md.on{opacity:1;pointer-events:auto}
 #md .box{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:26px;width:min(640px,100%);max-height:90vh;overflow:auto;transform:scale(.95);transition:.25s}#md.on .box{transform:none}
 .sw{display:flex;align-items:center;gap:10px;cursor:pointer;user-select:none}.sw i{width:44px;height:26px;border-radius:99px;background:var(--line);position:relative;transition:.25s}.sw i:after{content:"";position:absolute;top:3px;left:3px;width:20px;height:20px;border-radius:50%;background:#fff;transition:.25s}.sw.on i{background:var(--a2)}.sw.on i:after{left:21px}
@@ -119,19 +120,46 @@ $$('.tabs button').forEach(b=>b.onclick=()=>{$$('.tabs button').forEach(x=>x.cla
 function load(){tab==='p'?posts():leads()}
 async function posts(){ct.innerHTML='<div class="skel"></div>';const {data,error}=await sb.from('posts').select('*').order('published_at',{ascending:false});
  if(error)return toast('Błąd odczytu wpisów.',true);
- ct.innerHTML='<button class="btn sm" id="np" style="margin-bottom:20px">+ Nowy wpis</button>'+data.map(p=>`<div class="card it"><div><h3 style="margin:0">${esc(p.title)}</h3><small>/${esc(p.slug)} · ${fd(p.published_at)}</small> <span class="pill ${p.published?'ok':''}">${p.published?'opublikowany':'szkic'}</span></div><div class="row" style="gap:10px"><button class="btn sm ghost" data-e="${p.id}">Edytuj</button><button class="btn sm ghost" data-d="${p.id}">Usuń</button></div></div>`).join('');
+ ct.innerHTML='<button class="btn sm" id="np" style="margin-bottom:20px">+ Nowy wpis</button>'+data.map(p=>`<div class="card it"><div><h3 style="margin:0">${esc(p.title)}</h3><small>/${esc(p.rid||'—')}/${esc(p.slug)} · ${fd(p.published_at)}</small> <span class="pill ${p.published?'ok':''}">${p.published?'opublikowany':'szkic'}</span></div><div class="row" style="gap:10px"><button class="btn sm ghost" data-e="${p.id}">Edytuj</button><button class="btn sm ghost" data-d="${p.id}">Usuń</button></div></div>`).join('');
  $('#np').onclick=()=>edit({});
  $$('[data-e]').forEach(b=>b.onclick=()=>edit(data.find(p=>p.id===b.dataset.e)));
  $$('[data-d]').forEach(b=>b.onclick=async()=>{if(!await ask('Usunąć ten wpis?','Usuń'))return;const {error}=await sb.from('posts').delete().eq('id',b.dataset.d);error?toast('Nie udało się usunąć.',true):(toast('Wpis usunięty.'),posts())})}
 const slugify=s=>s.toLowerCase().replace(/ł/g,'l').normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
-function edit(p){let pub=!!p.published;
- modal(`<h3>${p.id?'Edytuj wpis':'Nowy wpis'}</h3><div class="f" style="margin-top:14px;max-width:none"><div><label>Tytuł</label><input class="in" id="t" value="${esc(p.title)}"></div><div><label>Slug (adres)</label><input class="in" id="s" value="${esc(p.slug)}"></div><div><label>Zajawka</label><input class="in" id="x" value="${esc(p.excerpt)}"></div><div><label>Treść (akapity oddziel pustą linią)</label><textarea class="in" id="c" style="min-height:200px">${esc(p.content)}</textarea></div><div class="sw ${pub?'on':''}" id="sw"><i></i>Opublikowany</div><div class="row"><button class="btn sm" id="sv">Zapisz</button><button class="btn sm ghost" id="cx">Anuluj</button></div></div>`);
+function edit(p){let pub=!!p.published,rid=p.rid||Math.random().toString(36).slice(2,10),cover=p.cover||'',manual=!!p.id;
+ modal(`<h3>${p.id?'Edytuj wpis':'Nowy wpis'}</h3><div class="f" style="margin-top:14px;max-width:none">
+<div><label>Tytuł</label><input class="in" id="t" value="${esc(p.title)}"></div>
+<div><label>Adres wpisu</label><div class="in" style="display:flex;align-items:center;gap:2px;flex-wrap:wrap"><span style="color:var(--mut)">/${rid}/</span><input id="s" value="${esc(p.slug)}" style="flex:1;min-width:140px;background:none;border:0;outline:0;color:inherit;font:inherit"></div></div>
+<div><label>Zajawka</label><input class="in" id="x" value="${esc(p.excerpt)}"></div>
+<div><label>Okładka</label><div class="dz" id="dc"></div><input type="file" id="fc" accept="image/*" hidden></div>
+<div><label>Treść (akapity oddziel pustą linią)</label><textarea class="in" id="c" style="min-height:200px">${esc(p.content)}</textarea>
+<div class="dz" id="di" style="margin-top:10px">🖼️ Przeciągnij zdjęcia tutaj (lub na pole tekstowe) albo kliknij – zostaną wstawione w treść</div><input type="file" id="fi" accept="image/*" multiple hidden></div>
+<div class="sw ${pub?'on':''}" id="sw"><i></i>Opublikowany</div>
+<div class="row"><button class="btn sm" id="sv">Zapisz</button><button class="btn sm ghost" id="cx">Anuluj</button></div></div>`);
+ async function up(f){if(f.size>5*1048576){toast('Plik większy niż 5 MB: '+f.name,true);return}
+  const ext=((f.name.split('.').pop()||'jpg').toLowerCase().replace(/[^a-z0-9]/g,''))||'jpg';
+  const path=`${rid}/${Date.now()}-${Math.random().toString(36).slice(2,6)}.${ext}`;
+  const {error}=await sb.storage.from('images').upload(path,f,{contentType:f.type});
+  if(error){toast('Nie udało się wgrać zdjęcia.',true);return}
+  return sb.storage.from('images').getPublicUrl(path).data.publicUrl}
+ function dz(el,inp,multi,cb){const run=async fs=>{fs=fs.filter(f=>/^image\//.test(f.type));if(!fs.length)return toast('Wybierz plik graficzny.',true);
+   el.classList.add('busy');for(const f of(multi?fs:fs.slice(0,1))){const u=await up(f);if(u)cb(u)}el.classList.remove('busy')};
+  ['dragenter','dragover'].forEach(n=>el.addEventListener(n,e=>{e.preventDefault();el.classList.add('hv')}));
+  ['dragleave','drop'].forEach(n=>el.addEventListener(n,e=>{e.preventDefault();el.classList.remove('hv')}));
+  el.addEventListener('drop',e=>run([...e.dataTransfer.files]));
+  if(inp){el.onclick=()=>inp.click();inp.onchange=()=>{run([...inp.files]);inp.value=''}}}
+ const showCover=()=>{$('#dc').innerHTML=cover?`<img src="${esc(cover)}" alt="" style="max-height:140px;border-radius:12px;margin:auto"><small style="display:block;margin-top:8px">Kliknij lub upuść, aby zmienić · <a href="#" id="rc">usuń</a></small>`:'🖼️ Przeciągnij okładkę tutaj albo kliknij';
+  const r=$('#rc');if(r)r.onclick=e=>{e.preventDefault();e.stopPropagation();cover='';showCover()}};showCover();
+ dz($('#dc'),$('#fc'),false,u=>{cover=u;showCover()});
+ const ins=u=>{const c=$('#c'),pos=c.selectionStart??c.value.length,tx=`\n\n![](${u})\n\n`;c.value=c.value.slice(0,pos)+tx+c.value.slice(pos);c.selectionStart=c.selectionEnd=pos+tx.length;toast('Zdjęcie wstawione.')};
+ dz($('#di'),$('#fi'),true,ins);dz($('#c'),null,true,ins);
+ $('#t').oninput=()=>{if(!manual)$('#s').value=slugify($('#t').value)};$('#s').oninput=()=>{manual=true};
  $('#sw').onclick=e=>{pub=!pub;e.currentTarget.classList.toggle('on',pub)};$('#cx').onclick=close;
  $('#sv').onclick=async()=>{const t=$('#t').value.trim(),s=slugify($('#s').value||t);if(!t||!s||!$('#c').value.trim())return toast('Uzupełnij tytuł i treść.',true);
-  const row={title:t,slug:s,excerpt:$('#x').value.trim(),content:$('#c').value,published:pub};
+  const row={title:t,slug:s,rid,excerpt:$('#x').value.trim(),cover:cover||null,content:$('#c').value,published:pub};
   if(pub&&!p.published)row.published_at=new Date().toISOString();
   const q=p.id?sb.from('posts').update(row).eq('id',p.id):sb.from('posts').insert(row);const {error}=await q;
-  if(error)return toast('Błąd zapisu (czy slug jest unikalny?).',true);close();toast('Zapisano.');posts()}}
+  if(error)return toast('Błąd zapisu (czy wykonano SQL z kolumnami rid i cover?).',true);close();toast('Zapisano.');posts()}}
+
 const ST=['new','in_progress','done','spam'],SL={new:'Nowe',in_progress:'W toku',done:'Zakończone',spam:'Spam'};
 async function leads(){ct.innerHTML='<div class="skel"></div>';const {data,error}=await sb.from('leads').select('*').order('created_at',{ascending:false});
  if(error)return toast('Błąd odczytu zgłoszeń.',true);if(!data.length){ct.innerHTML='<p class="lead">Brak zgłoszeń.</p>';return}
